@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTh-i1VMfJOKWz2JcVfYJXCsCr0q66WwK82BB4qgtFj1w&s=10">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>AKFA</title>
+</head>
+<body>
+
+    <div id="door-loader">
+        <div class="light-beam"></div>
+        <div class="door-frame">
+            <div class="door">
+                <div class="door-handle"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast-container"></div>
+
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-box">
+                <div class="logo-circle">
+                    <span class="logo-letter">A</span>
+                </div>
+                <span class="logo-text">AKFA DOORS</span>
+            </div>
+            <nav class="nav">
+                <a href="#home">Home</a>
+                <a href="#shop">Eshiklar</a>
+                <a href="#history">Tariximiz</a>
+                <a href="#features">Afzalliklar</a>
+                <a href="#news">Yangiliklar</a>
+            </nav>
+            <div class="header-actions">
+                <button class="btn contact-header-btn" id="contact-btn">
+                    <i class="fa-solid fa-headset"></i> Aloqa
+                </button>
+                <div class="cart-box" id="cart-icon-btn">
+                    <i class="fa-solid fa-bag-shopping cart-i"></i>
+                    <span class="cart-badge" id="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="modal-close">&times;</span>
+            <h2>Biz bilan bog'laning</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label>Ismingiz</label>
+                    <input type="text" id="contact-name" required placeholder="Ismingizni kiriting">
+                </div>
+                <div class="form-group">
+                    <label>Telefon raqamingiz</label>
+                    <input type="number" id="contact-phone" required placeholder="901234567">
+                </div>
+                <div class="form-group">
+                    <label>Izoh</label>
+                    <textarea id="contact-message" rows="4" required placeholder="Xabaringizni yozing..."></textarea>
+                </div>
+                <button type="submit" class="btn">Jo'natish</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-sidebar-header">
+            <h2><i class="fa-solid fa-bag-shopping"></i> Savatchangiz</h2>
+            <span class="close-btn" id="cart-close">&times;</span>
+        </div>
+        <div class="cart-sidebar-body">
+            <div class="cart-products-section">
+                <h3>Buyurtma mahsulotlari:</h3>
+                <div id="cart-items-list">
+                    <p class="empty-cart-msg">Savatchangiz bo'sh</p>
+                </div>
+            </div>
+            <form id="cart-order-form" class="cart-order-form">
+                <h3>Buyurtmachi ma'lumotlari:</h3>
+                <div class="form-group">
+                    <label>Ismingiz</label>
+                    <input type="text" id="cart-user-name" required placeholder="Ismingizni kiriting">
+                </div>
+                <div class="form-group">
+                    <label>Telefon raqamingiz</label>
+                    <input type="number" id="cart-user-phone" required placeholder="901234567">
+                </div>
+                <button type="submit" class="btn btn-order-submit"><i class="fa-solid fa-paper-plane"></i> Buyurtmani Jo'natish</button>
+            </form>
+        </div>
+    </div>
+    <div id="cart-overlay" class="cart-overlay"></div>
+
+    <main class="main-content">
+        <section id="home" class="hero-section">
+            <div class="hero-bg-overlay"></div>
+            <div class="hero-content">
+                <span class="hero-badge"><i class="fa-solid fa-shield-halved"></i> Premium Eshiklar Tizimi</span>
+                <h1 class="hero-title">Mukammallik Va Mustahkamlik Uyg'unligi</h1>
+                <p class="hero-subtitle">AKFA – Yevropa standartlari asosida yaratilgan, uyingiz xavfsizligi va go'zalligini ta'minlovchi zamonaviy eshik va profil tizimlari.</p>
+                <div class="hero-btns">
+                    <a href="#shop" class="btn btn-hero-primary"><i class="fa-solid fa-door-open"></i> Katalogni Ko'rish</a>
+                    <a href="#history" class="btn btn-hero-secondary"><i class="fa-solid fa-circle-info"></i> Biz Haqimizda</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="shop" class="sec-shop">
+            <h2 class="sec-title">Eshiklar Kolleksiyasi</h2>
+            <div class="shop-grid">
+                <div class="product-card">
+                    <div class="img-wrapper">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF_qWM8lA1lUePUAQLU7toLg0tdWInwBxsukHzPpnIyg&s=10" alt="rasm">
+                    </div>
+                    <h3>AKFA Classic Aluminium</h3>
+                    <p class="price">2,400,000 UZS</p>
+                    <button class="btn add-to-cart" data-name="AKFA Classic Aluminium" data-price="2400000"><i class="fa-solid fa-cart-plus"></i> Sotib olish +</button>
+                </div>
+                <div class="product-card">
+                    <div class="img-wrapper">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZaCkVDJxG14ShJ7wM1O3L3HS4OWHkem4c0_Mxcog9KQ&s=10" alt="rasm">
+                    </div>
+                    <h3>AKFA Thermo Pro 70</h3>
+                    <p class="price">3,100,000 UZS</p>
+                    <button class="btn add-to-cart" data-name="AKFA Thermo Pro 70" data-price="3100000"><i class="fa-solid fa-cart-plus"></i> Sotib olish +</button>
+                </div>
+                <div class="product-card">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1481277542470-605612bd2d61?w=500" alt="rasm">
+                    </div>
+                    <h3>AKFA High Line Glass</h3>
+                    <p class="price">4,500,000 UZS</p>
+                    <button class="btn add-to-cart" data-name="AKFA High Line Glass" data-price="4500000"><i class="fa-solid fa-cart-plus"></i> Sotib olish +</button>
+                </div>
+                <div class="product-card">
+                    <div class="img-wrapper">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7cVtYgd2fdP-rB7o3Ywmb_ycoArgeKQHuRo4bdqpHMg&s=10" alt="rasm">
+                    </div>
+                    <h3>AKFA Smart Sliding</h3>
+                    <p class="price">5,200,000 UZS</p>
+                    <button class="btn add-to-cart" data-name="AKFA Smart Sliding" data-price="5200000"><i class="fa-solid fa-cart-plus"></i> Sotib olish +</button>
+                </div>
+                <div class="product-card">
+                    <div class="img-wrapper">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMVz3fa42WLEE4-To0nnBi0zr045oqAAclOtMMyLWIrA&s=10" alt="rasm">
+                    </div>
+                    <h3>AKFA Panoramic View</h3>
+                    <p class="price">6,100,000 UZS</p>
+                    <button class="btn add-to-cart" data-name="AKFA Panoramic View" data-price="6100000"><i class="fa-solid fa-cart-plus"></i> Sotib olish +</button>
+                </div>
+                <div class="product-card">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500" alt="rasm">
+                    </div>
+                    <h3>AKFA Modern Black Edition</h3>
+                    <p class="price">3,800,000 UZS</p>
+                    <button class="btn add-to-cart" data-name="AKFA Modern Black Edition" data-price="3800000"><i class="fa-solid fa-cart-plus"></i> Sotib olish +</button>
+                </div>
+                <div class="product-card">
+                    <div class="img-wrapper">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgmW7FgwtdJo4iZFzAji1lb-tj-ugLoNC4HQglU7B1LQ&s=10" alt="rasm">
+                    </div>
+                    <h3>AKFA Eco Wood Grain</h3>
+                    <p class="price">3,400,000 UZS</p>
+                    <button class="btn add-to-cart" data-name="AKFA Eco Wood Grain" data-price="3400000"><i class="fa-solid fa-cart-plus"></i> Sotib olish +</button>
+                </div>
+                <div class="product-card">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=500" alt="rasm">
+                    </div>
+                    <h3>AKFA Acoustic Silent 80</h3>
+                    <p class="price">4,900,000 UZS</p>
+                    <button class="btn add-to-cart" data-name="AKFA Acoustic Silent 80" data-price="4900000"><i class="fa-solid fa-cart-plus"></i> Sotib olish +</button>
+                </div>
+                <div class="product-card">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=500" alt="rasm">
+                    </div>
+                    <h3>AKFA Biometrics Smart Door</h3>
+                    <p class="price">7,500,000 UZS</p>
+                    <button class="btn add-to-cart" data-name="AKFA Biometrics Smart Door" data-price="7500000"><i class="fa-solid fa-cart-plus"></i> Sotib olish +</button>
+                </div>
+                <div class="product-card">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=500" alt="rasm">
+                    </div>
+                    <h3>AKFA Office Double Glass</h3>
+                    <p class="price">3,900,000 UZS</p>
+                    <button class="btn add-to-cart" data-name="AKFA Office Double Glass" data-price="3900000"><i class="fa-solid fa-cart-plus"></i> Sotib olish +</button>
+                </div>
+                <div class="product-card">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1558002038-1055907df827?w=500" alt="rasm">
+                    </div>
+                    <h3>AKFA Security Armor 100</h3>
+                    <p class="price">8,200,000 UZS</p>
+                    <button class="btn add-to-cart" data-name="AKFA Security Armor 100" data-price="8200000"><i class="fa-solid fa-cart-plus"></i> Sotib olish +</button>
+                </div>
+                <div class="product-card">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=500" alt="rasm">
+                    </div>
+                    <h3>AKFA Minimal White Door</h3>
+                    <p class="price">2,900,000 UZS</p>
+                    <button class="btn add-to-cart" data-name="AKFA Minimal White Door" data-price="2900000"><i class="fa-solid fa-cart-plus"></i> Sotib olish +</button>
+                </div>
+                <div class="product-card">
+                    <div class="img-wrapper">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7xl8FDh7lU8TfE0rhbfpI-KSXGPKhOPgyfP31YS7Sqg&s=10" alt="rasm">
+                    </div>
+                    <h3>AKFA Automatic Sensor Door</h3>
+                    <p class="price">9,100,000 UZS</p>
+                    <button class="btn add-to-cart" data-name="AKFA Automatic Sensor Door" data-price="9100000"><i class="fa-solid fa-cart-plus"></i> Sotib olish +</button>
+                </div>
+                <div class="product-card">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=500" alt="rasm">
+                    </div>
+                    <h3>AKFA Luxury Villa Entrance</h3>
+                    <p class="price">10,500,000 UZS</p>
+                    <button class="btn add-to-cart" data-name="AKFA Luxury Villa Entrance" data-price="10500000"><i class="fa-solid fa-cart-plus"></i> Sotib olish +</button>
+                </div>
+                <div class="product-card">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=500" alt="rasm">
+                    </div>
+                    <h3>AKFA Bronze Mirror Glass</h3>
+                    <p class="price">5,800,000 UZS</p>
+                    <button class="btn add-to-cart" data-name="AKFA Bronze Mirror Glass" data-price="5800000"><i class="fa-solid fa-cart-plus"></i> Sotib olish +</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="history" class="sec-nike-style">
+            <div class="nike-card">
+                <div class="nike-text-content">
+                    <span class="sub-tag">RASMIY TASHKILOT MA'LUMOTLARI</span>
+                    <h2 class="main-head">AKFA Kampaniyasi Tarixi</h2>
+                    <p class="desc-p">AKFA kompaniyasi aniq kim tomonidan, qachon va qayerda tashkil etilgani haqida to'liq ma'lumotlar:</p>
+                    <div class="stats-row">
+                        <div class="stat-box">
+                            <h4>2000</h4>
+                            <p>Yil (Toshkent)</p>
+                        </div>
+                        <div class="stat-box">
+                            <h4>Toshkent, UZB</h4>
+                            <p>Markaziy Osiyo</p>
+                        </div>
+                        <div class="stat-box">
+                            <h4>AKFA Group</h4>
+                            <p>Asoschilar</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="nike-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=700" alt="rasm">
+                </div>
+            </div>
+
+            <div class="nike-card reverse">
+                <div class="nike-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?w=700" alt="rasm">
+                </div>
+                <div class="nike-text-content">
+                    <span class="sub-tag">MEROS VA INNOVATSIYA</span>
+                    <h2 class="main-head">Zamonaviy Texnologiyalar (2010)</h2>
+                    <p class="desc-p">Sifatli alyuminiy va PVX profillar ishlab chiqarish bo'yicha yetakchilik va xalqaro standartlar joriy etilishi.</p>
+                    <div class="stats-row">
+                        <div class="stat-box">
+                            <h4>2010</h4>
+                            <p>Yilda Yaratilgan</p>
+                        </div>
+                        <div class="stat-box">
+                            <h4>O'zbekiston</h4>
+                            <p>Boshlanish Nuqtasi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nike-card">
+                <div class="nike-text-content">
+                    <span class="sub-tag">AFSONAVIY DAVR</span>
+                    <h2 class="main-head">Kengayish Davri (2015 - 2020)</h2>
+                    <p class="desc-p">Yangi eshik va deraza tizimlarining ishlab chiqarilishi, Yevropa standartlariga mos zamonaviy zavodlar ishga tushishi.</p>
+                    <div class="stats-row">
+                        <div class="stat-box">
+                            <h4>2015</h4>
+                            <p>Eksport Debyuti</p>
+                        </div>
+                        <div class="stat-box">
+                            <h4>Xalqaro</h4>
+                            <p>Sifat Sertifikati</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="nike-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=700" alt="rasm">
+                </div>
+            </div>
+
+            <div class="nike-card reverse">
+                <div class="nike-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=700" alt="rasm">
+                </div>
+                <div class="nike-text-content">
+                    <span class="sub-tag">SHAHAR MADANIYATI</span>
+                    <h2 class="main-head">Global Darajadagi Mahsulotlar (2026)</h2>
+                    <p class="desc-p">Aql-idrokli va energiya tejamkor zamonaviy eshiklar, shovqin o'tkazmaydigan premium tizimlar yechimi.</p>
+                    <div class="stats-row">
+                        <div class="stat-box">
+                            <h4>2026</h4>
+                            <p>Yangi Bosqich</p>
+                        </div>
+                        <div class="stat-box">
+                            <h4>Global</h4>
+                            <p>Dizayn Manbai</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="sec-features-combined">
+            <div class="features-header">
+                <h2>Ajoyib Xususiyatlar va Afzalliklar</h2>
+                <p>AKFA mahsulotlarining barcha texnik va ekologik ustunliklari bir joyda</p>
+            </div>
+            <div class="features-list-wrapper">
+                <div class="feature-item-row">
+                    <div class="feature-text-side">
+                        <h3><i class="fa-solid fa-award"></i> Sifat va Kafolat Tizimi</h3>
+                        <p>Barcha mahsulotlarimiz ISO 9001 xalqaro standartlariga to'liq javob beradi va 10 yillik rasmiy kafolatga ega.</p>
+                    </div>
+                    <div class="feature-img-side">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIZClZrMpppL5FSeX32fPZPVsmvx9tKU6-2JjIQwDOQQ&s=10" alt="rasm">
+                    </div>
+                </div>
+
+                <div class="feature-item-row reverse-row">
+                    <div class="feature-text-side">
+                        <h3><i class="fa-solid fa-leaf"></i> Ekologik Toza Materiallar</h3>
+                        <p>Atrof-muhitga zarar yetkazmaydigan va qayta ishlanuvchi alyuminiy qotishmalaridan foydalanamiz.</p>
+                    </div>
+                    <div class="feature-img-side">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdeIoGoHnCafq-jFC_gOiyoVgDo70sTVa6ERMo1pSPoQ&s=10" alt="rasm">
+                    </div>
+                </div>
+
+                <div class="feature-item-row">
+                    <div class="feature-text-side">
+                        <h3><i class="fa-solid fa-bolt"></i> Energiya Tejamkorlik</h3>
+                        <p>Alohida termo-ko'priklar va ko'p kamerali strukturamiz tufayli xonalarda issiqlik va sovuq balansi saqlanadi.</p>
+                    </div>
+                    <div class="feature-img-side">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600" alt="rasm">
+                    </div>
+                </div>
+
+                <div class="feature-item-row reverse-row">
+                    <div class="feature-text-side">
+                        <h3><i class="fa-solid fa-volume-xmark"></i> Shovqinsiz Hayot Tizimi</h3>
+                        <p>AKFA eshiklari ko'chaning shovqinini 85% gacha to'sib, uyingizda tinchlik va osoyishtalikni ta'minlaydi.</p>
+                    </div>
+                    <div class="feature-img-side">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXthXbCUcTBXXV_EX5aQjYbs9yc8LN0cl9OiWW2UMDKw&s=10" alt="rasm">
+                    </div>
+                </div>
+
+                <div class="feature-item-row">
+                    <div class="feature-text-side">
+                        <h3><i class="fa-solid fa-pen-ruler"></i> Individual Dizayn Loyihalari</h3>
+                        <p>Mijozlarimiz xohishiga ko'ra har qanday razmer, rang va uslubda tayyorlab berish imkoniyati mavjud.</p>
+                    </div>
+                    <div class="feature-img-side">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600" alt="rasm">
+                    </div>
+                </div>
+
+                <div class="feature-item-row reverse-row">
+                    <div class="feature-text-side">
+                        <h3><i class="fa-solid fa-key"></i> Smart Qulflar va Xavfsizlik</h3>
+                        <p>Biometrik, barmoq izi hamda parollar bilan ishlaydigan zamonaviy aqlli eshik mexanizmlari integratsiyasi.</p>
+                    </div>
+                    <div class="feature-img-side">
+                        <img src="https://images.unsplash.com/photo-1558002038-1055907df827?w=600" alt="rasm">
+                    </div>
+                </div>
+
+                <div class="feature-item-row">
+                    <div class="feature-text-side">
+                        <h3><i class="fa-solid fa-truck-fast"></i> Professional O'rnatish Xizmati</h3>
+                        <p>Malakali mutaxassislarimiz tomonidan o'lchash, yetkazish va o'rnatish ishlari zudlik bilan amalga oshiriladi.</p>
+                    </div>
+                    <div class="feature-img-side">
+                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600" alt="rasm">
+                    </div>
+                </div>
+
+                <div class="feature-item-row reverse-row">
+                    <div class="feature-text-side">
+                        <h3><i class="fa-solid fa-handshake"></i> Hamkorlik va Ulgurji Xarid</h3>
+                        <p>Qurilish kompaniyalari va dilerlar uchun maxsus chegirmali narxlar va qulay hamkorlik shartlari.</p>
+                    </div>
+                    <div class="feature-img-side">
+                        <img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=600" alt="rasm">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="news" class="sec-news">
+            <h2 class="sec-title-dark">Yangiliklar va Hodisalar</h2>
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-img-box">
+                        <img src="https://akfaaluminium.com/img/src/news/News080526.jpg" alt="rasm">
+                    </div>
+                    <span class="news-meta">AKFA ALUMINIUM / 08 MAY, 2026</span>
+                    <h3 class="news-title">AKFA Aluminium Publishes Decision on Initial Share Placement</h3>
+                    <button class="btn view-more-btn">VIEW MORE</button>
+                    <div class="extra-content">
+                        <p>Kompaniya aksiyadorlik jamiyatiga aylanish va birjada dastlabki ulushlarni joylashtirish to'g'risida rasmiy qarorni e'lon qildi.</p>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <div class="news-img-box">
+                        <img src="https://akfaaluminium.com/img/src/news/News110226.jpg" alt="rasm">
+                    </div>
+                    <span class="news-meta">AKFA ALUMINIUM / 11 FEBRUARY, 2026</span>
+                    <h3 class="news-title">AKFA Aluminium Participates in UzBuild 2026 International Exhibition</h3>
+                    <button class="btn view-more-btn">VIEW MORE</button>
+                    <div class="extra-content">
+                        <p>Xalqaro qurilish ko'rgazmasida kompaniya o'zining yangi avlod issiqlik saqlovchi eshik va profil tizimlarini namoyish etdi.</p>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <div class="news-img-box">
+                        <img src="https://akfaaluminium.com/img/src/news/News140126.jpg" alt="rasm">
+                    </div>
+                    <span class="news-meta">AKFA GROUP / 14 JANUARY, 2026</span>
+                    <h3 class="news-title">AKFA Aluminium at the Uzbekistan–Iraq Business Forum</h3>
+                    <button class="btn view-more-btn">VIEW MORE</button>
+                    <div class="extra-content">
+                        <p>Biznes forum doirasida ikki tomonlama eksport shartnomalari va eshik mahsulotlarini yetkazib berish bo'yicha kelishuvlar imzolandi.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sec-stats-banner">
+            <div class="stats-wrapper">
+                <div class="stat-item">
+                    <h2>24+</h2>
+                    <p>Yillik Tajriba</p>
+                </div>
+                <div class="stat-item">
+                    <h2>1000+</h2>
+                    <p>Xodimlar Soni</p>
+                </div>
+                <div class="stat-item">
+                    <h2>50+</h2>
+                    <p>Eksport Davlatlari</p>
+                </div>
+                <div class="stat-item">
+                    <h2>1M+</h2>
+                    <p>Mamnun Mijozlar</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="sec-cta-banner">
+            <div class="cta-content">
+                <h2>Uyingiz Uchun Eng Yaxshi Eshikni Tanlang</h2>
+                <p>Bizning mutaxassislarimiz sizga bepul konsultatsiya va o'lchov xizmatini taqdim etadi.</p>
+                <button class="btn btn-cta" id="cta-contact-trigger"><i class="fa-solid fa-paper-plane"></i> Konsultatsiya Olish</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="logo-box">
+                    <div class="logo-circle">
+                        <span class="logo-letter">A</span>
+                    </div>
+                    <span class="logo-text">AKFA DOORS</span>
+                </div>
+                <p>O'zbekistondagi yetakchi eshik va profil tizimlari ishlab chiqaruvchisi.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Tezkor Havolalar</h4>
+                <ul>
+                    <li><a href="#shop">Eshiklar katalogi</a></li>
+                    <li><a href="#history">Biz haqimizda</a></li>
+                    <li><a href="#news">So'nggi yangiliklar</a></li>
+                    <li><a href="#">Kafolat shartlari</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Xizmatlar</h4>
+                <ul>
+                    <li><a href="#">O'lchov olish</a></li>
+                    <li><a href="#">Etkazib berish</a></li>
+                    <li><a href="#">O'rnatish va servis</a></li>
+                    <li><a href="#">Smart tizimlar</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Bog'lanish</h4>
+                <p><i class="fa-solid fa-location-dot"></i> Toshkent sh., Shayxontohur t.</p>
+                <p><i class="fa-solid fa-phone"></i> +998 (71) 200-00-00</p>
+                <p><i class="fa-solid fa-envelope"></i> info@akfa.uz</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 AKFA Doors. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
